@@ -1,1 +1,1 @@
-web: gunicorn credicxo_task.wsgi
+web: gunicorn credicxo_task.wsgi:application
