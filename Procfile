@@ -1,1 +1,1 @@
-web: gunicorn Techneith.wsgi
+web: gunicorn credicxo_task.wsgi
