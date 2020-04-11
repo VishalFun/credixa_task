@@ -25,7 +25,7 @@ SECRET_KEY = 'roiv@lybmk(5rn1ebm&bs#5(g3oekzm#9$ke%agc^)j1xq8o8('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['credicxotask.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
