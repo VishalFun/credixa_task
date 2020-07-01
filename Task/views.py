@@ -13,7 +13,12 @@ class BankAPIView(viewsets.ModelViewSet):
 
 class BranchAPIView(viewsets.ModelViewSet):
     serializer_class = serializers.BranchSerializer
+    queryset = Branchs.objects.all()
 
+
+class BankBranchView(viewsets.ReadOnlyModelViewSet):
+    serializer_class = serializers.BankBranchSerializer
+    
     def get_queryset(self):
         queryset = Branchs.objects.all()
         ifsc = self.request.query_params.get('ifsc',None)
@@ -21,12 +26,20 @@ class BranchAPIView(viewsets.ModelViewSet):
         bank_name = self.request.query_params.get('bank_name',None)
 
         if ifsc is not None:
-            queryset = queryset.filter(ifsc=ifsc)
+            try:
+                queryset = queryset.filter(ifsc=ifsc)
+            except:
+                pass
         if bank_name is not None:
-            bank = Banks.objects.get(name=bank_name)
-            queryset = queryset.filter(bank=bank)
+            try:
+                bank = Banks.objects.get(name=bank_name)
+                queryset = queryset.filter(bank=bank)
+            except:
+                pass
         if city is not None:
-            queryset = queryset.filter(city=city)
+            try:
+                queryset = queryset.filter(city=city)
+            except:
+                pass
 
         return queryset
-
