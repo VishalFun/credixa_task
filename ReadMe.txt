@@ -1,5 +1,7 @@
-1. Check Requirements.txt file for dependecies needed. 
-2.Run cmd (pip install requirements.txt) to install dependencies.
+1.Install Python in your machine. Python >=3.5
+2. Install MongoDB in your machine.
+3. Check Requirements.txt file for dependecies needed. 
+4.Run cmd (pip install requirements.txt) to install dependencies.
 
 How to Run:
 
